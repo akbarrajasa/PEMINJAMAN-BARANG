@@ -14,17 +14,9 @@ maka inovasi program kreatif ini untuk meminimalisir kemungkinan terburuk itu da
 ## 🔥TUKANG NGODING
 1. M. Akbar Rajasa
 2. Rima Zakiyya Taufani
-3. Davina Queenian Syafasa
+3. Davina Queenia Syafasa
 4. Nadia Ayuningtias
 5. Mahardika Hidayatullah
 
-   
-
-
-
-
-
-
-
-
-🔥 🚀 💡 🎯
+🎯 "Perasaan boleh baper, tapi kode harus proper"
+~ Kelompok 7
