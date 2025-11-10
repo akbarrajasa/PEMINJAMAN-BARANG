@@ -1,7 +1,11 @@
 # 🚀 PEMINJAMAN-BARANG
 Program ini dibuat dari mahasiswa, oleh mahasiswa dan untuk mahasiswa. 
 Karena kos adalah tempat berlalu lalang barang dipinjam hingga hilang, 
-maka inovasi program kreatif ini untuk meminimalisir kemungkinan terburuk itu dan lebih aware lagi dengan barang sendiri.
+maka sistem sederhana ini hadir untuk :
+- Mempermudah pengelolaan data
+- Mempercepat pencarian data
+- Meminimalisir kehilangan barang
+- Membuat pencatatan lebih elegan😎
 
 ## 💡FITUR KEBANGGAAN
 1. Input Data Pinjaman
