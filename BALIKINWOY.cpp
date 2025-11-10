@@ -1,6 +1,7 @@
-#include <iostream>
-using namespace std;
+cout<<"Data barang yang dipinjam pada bulan "<<bulan<<endl;
 
+for(int a=0; a<array; a++){
+    cout<<"Data Ke-"<<a+1<<endl;
 int main() {
 
 /* yash kita akan buat program nyatet barang yang dipinjem
@@ -66,4 +67,9 @@ for(int a=0; a<array; a++){
 }
 return 0;
 
+    cout<<"Nama Barang              = "<<barang[a]<<endl;
+    cout<<"Nama Peminjam            = "<<nama[a]<<endl;
+    cout<<"Status Peminjaman        = "<<status[a]<<endl;
+    cout<<"Tanggal pinjam           = "<<tanggal[a]<<endl;
+    cout<<endl;
 }
