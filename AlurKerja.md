@@ -1,6 +1,9 @@
 # Alur Kerja Program Peminjaman Barang
 
-## 1. Tambah peminjaman barang
+## Menu Utama
+>User memilih menu untuk masuk ke dalam program (0-5)
+
+### 1. Tambah peminjaman barang
 1. User pilih menu 1 di tampilan utama
 2. Program cek apakah total peminjaman < [111],
    jika penuh kembali ke menu utama
@@ -17,20 +20,20 @@ input disimpan ke array variabel masing masing
 6. Program kembali melakukan perulangan (while) = lanjut/tidak 
 7. Jika user memilih tidak, maka program kembali ke menu utama
 
-## 2. Lihat semua peminjaman
+### 2. Lihat semua peminjaman
 1. User memilih menu 2 di tampilan utama
 2. Program cek apakah data kosong.
    Jika kosong tampilkan pesan "Belum ada data peminjaman"
    Lalu kembalu ke menu utama
 3. Jika ada data
    - Program menampilkan semua peminjaman dalam bentuk daftar nomor
-   > Nama Barang
-   > Nama Peminjam
-   > Tanggal Pinjam
-   > Status peminjaman (Sudah kembali/Belum kembali)
+   > Nama Barang.
+   > Nama Peminjam.
+   > Tanggal Pinjam.
+   > Status peminjaman (Otomatis terisi "Sedang DIpinjam")
 4. Setelah program tampil, kembali ke menu utama
 
-## 3. Tandai Barang sudah dikembalikan
+### 3. Tandai Barang sudah dikembalikan
 1. User pilih nomor 3 di tampilan menu utama
 2. Program cek apakah data kosong.
    Jika kosong tampilkan pesan "Belum ada data peminjaman"
@@ -43,21 +46,8 @@ input disimpan ke array variabel masing masing
 7. Program menampilkan pesan "Barang berhasil ditandai"
 8. Kembali ke menu utama
 
-## 4. Lihat barang yang belum kembali
+### 4. Cari Barang
 1. User pilih nomor 4
-2. Program cek apakah data kosong.
-   Jika kosong tampilkan pesan "Belum ada data peminjaman"
-   Lalu kembalu ke menu utama
-3. Program buat daftar barang yang statusnya belum kembali
-4. Jika tidak ada barang yang belum kembali.
-   Tampilkan pesan "Semuua barang sudah kembali"
-   Kembali ke menu utama
-5. Jika ada barangnya.
-   Program tampilkan seluruh barang yang belum kembali
-6. Kembali ke menu utama
-
-## 5. Cari Barang
-1. User pilih nomor 5
 2. 2. Program cek apakah data kosong.
    Jika kosong tampilkan pesan "Belum ada data peminjaman"
    Lalu kembalu ke menu utama
@@ -67,13 +57,16 @@ input disimpan ke array variabel masing masing
    Jika tidak ditemukan, tampilkan pesan "Barang tidak ditemukan"
 5. Kembali ke menu utama
 
-## 6. Hitung total barang yang belum kembali
-1. User pilih nomor 6
+### 5. Hitung total barang yang belum kembali
+1. User pilih nomor 5
 2. Program cek apakah data kosong.
    Jika kosong tampilkan pesan "Belum ada data peminjaman"
    Lalu kembalu ke menu utama
 3. Program menghitung jumlah item yang belum kembali
 4. Tampilkan hasilnya "Total barang yang belum kembali = x"
 5. Program kembali ke menu utama
+
+### 0. Keluar dari program
+Apabila user memilih menu 0, maka program berakhir
 
 Semangatt!!!
