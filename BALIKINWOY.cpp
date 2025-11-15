@@ -1,75 +1,166 @@
-cout<<"Data barang yang dipinjam pada bulan "<<bulan<<endl;
+#include <iostream>
+using namespace std;
 
-for(int a=0; a<array; a++){
-    cout<<"Data Ke-"<<a+1<<endl;
-int main() {
+//deklarasi variabel utama dulu
+const int BarangPenuh = 111; //batas barang sampai 111
+int tanggal[BarangPenuh];
+string barang [BarangPenuh];
+string nama [BarangPenuh];
+string status [BarangPenuh];
+int totalBarang = 0;
 
-/* yash kita akan buat program nyatet barang yang dipinjem
-pembagian tugasnya perfitur, jadi kita totally akan buat 5 fitur
-1. input data peminjaman (Davina)
-2. nampilin semua data (Mahardika)
-3. tandai barang yang udah dibalikin (Nadia)
-4. liat barang yang belum dibalikin (Rima)
-5. itung total barang yang belum dibalikin (Akbar)
-6. cari barang (Akbar)
-karena mode ambis jadi 5+1 fitur kebanggaan :)
-*/
 
- int tanggal[111];
-string barang [111];
-string nama [111];
-string status [111];
+//buat menu pilihan 0-5
+//program jalan sesuai pilihan menu dari usernya
+void tampilkanMenu(){
+    cout<<" ==== SISTEM PEMINJAMAN BARANG === "<<endl;
+    cout<<"1. Input barang baru "<<endl;
+    cout<<"2. Daftar barang yang belum kembali "<<endl;
+    cout<<"3. Tandai barang yang sudah kembali "<<endl;
+    cout<<"4. Cari Barang "<<endl;
+    cout<<"5. Jumlah barang yang belum kembali"<<endl;
+    cout<<"0. Keluar dari Program"<<endl<<endl;
+    cout<<"Pilih Menu 0-5"<<endl;
+}
 
-int array = 0;
-int i;
-string bulan;
-cout<<"Data peminjaman pada bulan = ";
-cin>>bulan;
+//program untuk menu 1 (tambah barang)
+void inputBarang(){
+    int run;
+    if(totalBarang >= BarangPenuh){ //kondisi kalo jumlah inputan udah lebih dari 111
+        cout<<"Maaf, sudah full kapasitas";
+    } 
 
-while (true){
-cout<<"1. isi"<<endl<<"2. Selesai"<<endl;
+        cout<<" === INPUT BARANG BARU === "<<endl; //judul menu 1
+//looping untuk input barangnya
+        while (true){ 
+cout<<"1. isi"<<endl<<"2. Selesai"<<endl; 
 cout<<"Pilih salah satu : ";
-cin>>i;
-
-
-if (i==2){
+cin>>run;
+cout<<endl;
+cin.ignore(); //supaya getline yang bawah bisa kebaca
+        
+//kalo user ngeinput 2 berarti looping selesai
+//kembali ke menu utama
+if (run==2){
     cout<<"Program selesai"<<endl;
     break;
 }
+//kalo user input 1 bakal terus ngelooping
+//pake getline karena supaya bisa kebaca satu kalimat
+else if (run==1){
+cout<<"Nama Barang                   : "; //input nama barang
+getline(cin,barang[totalBarang]);
 
-getline(cin,barang[array]);
-cout<<endl;
+cout<<"Nama Peminjam                 : "; //input nama peminjam
+getline(cin,nama[totalBarang]);
 
-cout<<"Nama Barang                   : ";
-getline(cin,barang[array]);
+cout<<"Tanggal pinjam                : "; //input tanggal peminjaman 
+cin>>tanggal[totalBarang];
 
-cout<<"Nama Peminjam                 : ";
-getline(cin,nama[array]);
+cout<<"Status Peminjaman             : Sedang Dipinjam" <<endl; //bagian ini otomatis keisi barangnya belum kembali
 
-cout<<"Status Peminjaman             : ";
-getline(cin,status[array]);
-
-cout<<"Tanggal pinjam                : ";
-cin>>tanggal[array];
- array++;
+ totalBarang++; //jumlah barang dalam arraynya bertambah
+ cout<<endl;
+}
+else { //kondisi kalo user milih inputan selain 1 dan 2
+    cout<<"Input tidak valid"<<endl<<endl;
+}
  
 }
- cout<<"Data barang yang dipinjam pada bulan "<<bulan<<endl;
 
-for(int a=0; a<array; a++){
-    cout<<"Data Ke-"<<a+1<<endl;
+    }
 
-    cout<<"Nama Barang              = "<<barang[a]<<endl;
-    cout<<"Nama Peminjam            = "<<nama[a]<<endl;
-    cout<<"Status Peminjaman        = "<<status[a]<<endl;
-    cout<<"Tanggal pinjam           = "<<tanggal[a]<<endl;
+
+//ini fungsi untuk nampilin barang yang sedang dipinjam
+void daftarBarang(){
+
+    if(totalBarang<=0){ //kondisi kalo belum ada inputan barang
+        cout<<"Barang tidak ada"<<endl<<endl;
+
+    } else{ //kalo ada, dia ngelooping buat ditampilin
+for(int x=0; x<totalBarang; x++){
+    cout<<"Data Ke-"<<x+1<<endl;
+
+    cout<<"Nama Barang              = "<<barang[x]<<endl;
+    cout<<"Nama Peminjam            = "<<nama[x]<<endl;
+    cout<<"Status Peminjaman        = Sedang Dipinjam"<<status[x]<<endl;
+    cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
     cout<<endl;
 }
-return 0;
+    }
 
-    cout<<"Nama Barang              = "<<barang[a]<<endl;
-    cout<<"Nama Peminjam            = "<<nama[a]<<endl;
-    cout<<"Status Peminjaman        = "<<status[a]<<endl;
-    cout<<"Tanggal pinjam           = "<<tanggal[a]<<endl;
-    cout<<endl;
+
+}
+
+void tandaiBarang(){
+
+
+
+
+
+}
+
+
+void cariBarang(){
+
+
+
+
+
+
+
+}
+
+
+int hitungBarang(){
+
+
+
+
+
+}
+
+
+int main (){
+    int pilihan;
+    bool running = true;
+
+    while(running) {
+        tampilkanMenu();
+        cout<<"Masukkan Pilihan Menu : ";
+        cin>>pilihan;
+        cout<<endl<<endl;
+
+        switch (pilihan){
+
+            case 1:
+            inputBarang();
+            break;
+
+            case 2:
+            daftarBarang();
+            break;
+
+            case 3:
+            tandaiBarang();
+            break;
+
+            case 4:
+            cariBarang();
+            break;
+
+            case 5:
+            hitungBarang();
+            break;
+
+            case 0 :
+            cout<<"Thanksss"<<endl;
+            running = false;
+            break;
+
+            default :
+            cout<<"tidak valid"<<endl;
+        }
+    }
+    return 0;
 }
