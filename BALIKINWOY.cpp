@@ -56,8 +56,9 @@ getline(cin,nama[totalBarang]);
 
 cout<<"Tanggal pinjam                : "; //input tanggal peminjaman 
 cin>>tanggal[totalBarang];
+status[totalBarang] = "Sedang Dipinjam";
 
-cout<<"Status Peminjaman             : Sedang Dipinjam" <<endl; //bagian ini otomatis keisi barangnya belum kembali
+cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian ini otomatis keisi barangnya belum kembali
 
  totalBarang++; //jumlah barang dalam arraynya bertambah
  cout<<endl;
@@ -83,7 +84,7 @@ for(int x=0; x<totalBarang; x++){
 
     cout<<"Nama Barang              = "<<barang[x]<<endl;
     cout<<"Nama Peminjam            = "<<nama[x]<<endl;
-    cout<<"Status Peminjaman        = Sedang Dipinjam"<<status[x]<<endl;
+    cout<<"Status Peminjaman        = "<<status[x]<<endl;
     cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
     cout<<endl;
 }
@@ -93,22 +94,29 @@ for(int x=0; x<totalBarang; x++){
 }
 
 void tandaiBarang(){
-
-
-
-
-
+  
 }
 
 
 void cariBarang(){
-
-
-
-
-
-
-
+  
+  string cari;
+  cout << "fitur ini dipakai untuk mencari barang\n";
+  cout << "=======================================" << endl;
+  cout<<"Masukkan nama barang : ";
+  cin.ignore();
+  getline(cin, cari);
+  for(int x=0; x<totalBarang; x++){
+  if (barang[x] == cari){
+    cout << "=======================================" << endl;
+    cout << "Ini dia barang yang kamu cari\n";
+    cout<<"Nama Barang              = "<<barang[x]<<endl;
+    cout<<"Nama Peminjam            = "<<nama[x]<<endl;
+    cout<<"Status Peminjaman        = "<<status[x]<<endl;
+    cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
+    cout<<endl;
+  }
+  }
 }
 
 
@@ -117,7 +125,7 @@ int hitungBarang(){
 
 
 
-
+  return 0;
 }
 
 
