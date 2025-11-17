@@ -58,7 +58,6 @@ cout<<"Tanggal pinjam                : "; //input tanggal peminjaman
 cin>>tanggal[totalBarang];
 
 cout<<"Status Peminjaman             : Sedang Dipinjam" <<endl; //bagian ini otomatis keisi barangnya belum kembali
-
  totalBarang++; //jumlah barang dalam arraynya bertambah
  cout<<endl;
 }
@@ -83,7 +82,7 @@ for(int x=0; x<totalBarang; x++){
 
     cout<<"Nama Barang              = "<<barang[x]<<endl;
     cout<<"Nama Peminjam            = "<<nama[x]<<endl;
-    cout<<"Status Peminjaman        = Sedang Dipinjam"<<status[x]<<endl;
+    cout<<"Status Peminjaman        = "<<status[x]<<endl;
     cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
     cout<<endl;
 }
@@ -92,13 +91,36 @@ for(int x=0; x<totalBarang; x++){
 
 }
 
-void tandaiBarang(){
 
+void tandaiBarang()
 
+{
+    // tampilin daftar barang
+    daftarBarang();
 
+    int tandaiBarang;
+    if (totalBarang >= 1)
+    {
+        cout << "Input nomor barang yg mau ditandai = " << endl;
+        cin >> tandaiBarang;
 
+        int indexBarang = tandaiBarang - 1;
+        if (indexBarang < 0 || indexBarang > totalBarang)
+        {
+            cout << "Nomor barang tidak valid" << endl;
+        }
+        else
+        {
+            status[indexBarang] = "Sudah dikembalikan";
 
+            cout << "Barang berhasil ditandai" << endl;
+        }
+    }
 }
+
+
+
+
 
 
 void cariBarang(){
@@ -112,7 +134,7 @@ void cariBarang(){
 }
 
 
-int hitungBarang(){
+void hitungBarang(){
 
 
 
