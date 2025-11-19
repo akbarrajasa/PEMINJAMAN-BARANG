@@ -93,9 +93,36 @@ for(int x=0; x<totalBarang; x++){
 
 }
 
-void tandaiBarang(){
-  
+
+void tandaiBarang()
+
+{
+    // tampilin daftar barang
+    daftarBarang();
+
+    int tandaiBarang;
+    if (totalBarang >= 1)
+    {
+        cout << "Input nomor barang yg mau ditandai = " << endl;
+        cin >> tandaiBarang;
+
+        int indexBarang = tandaiBarang - 1;
+        if (indexBarang < 0 || indexBarang > totalBarang)
+        {
+            cout << "Nomor barang tidak valid" << endl;
+        }
+        else
+        {
+            status[indexBarang] = "Sudah dikembalikan";
+
+            cout << "Barang berhasil ditandai" << endl;
+        }
+    }
 }
+
+
+
+
 
 
 void cariBarang(){
@@ -120,7 +147,7 @@ void cariBarang(){
 }
 
 
-int hitungBarang(){
+void hitungBarang(){
 
 
 
