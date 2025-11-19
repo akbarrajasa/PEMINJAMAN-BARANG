@@ -21,8 +21,8 @@ miliknya pergi. Program yang akan dibuat oleh Devi menggabungkan beberapa unsur 
 percabangan, looping, array dan function.  
 
 Fitur fitur yang akan dibuat Devi antara lain : 
-1. Input barang yang dipinjam 
-2. Daftar barang 
+1. Menginput barang yang dipinjam 
+2. Melihat daftar barang 
 3. Menandai barang yang sudah Kembali 
 4. Mencari barang yang dipinjam 
 5. Menghitung jumlah barang yang belum kembali
