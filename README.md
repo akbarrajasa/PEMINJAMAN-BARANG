@@ -16,11 +16,11 @@ maka sistem sederhana ini hadir untuk :
 6. Cari barang
 
 ## 🔥TUKANG NGODING
-1. M. Akbar Rajasa
-2. Rima Zakiyya Taufani
-3. Davina Queenia Syafasa
-4. Nadia Ayuningtias
-5. Mahardika Hidayatullah
+1. M. Akbar Rajasa (Cari Barang)
+2. Rima Zakiyya Taufani (Hitung Barang)
+3. Davina Queenia Syafasa (Input Barang)
+4. Nadia Ayuningtias (Tandai Barang)
+5. Mahardika Hidayatullah (Tampilkan Barang)
 
 🎯 "Perasaan boleh baper, tapi kode harus proper"
 ~ Kelompok 7

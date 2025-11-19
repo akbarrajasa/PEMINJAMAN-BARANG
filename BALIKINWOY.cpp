@@ -56,6 +56,7 @@ getline(cin,nama[totalBarang]);
 
 cout<<"Tanggal pinjam                : "; //input tanggal peminjaman 
 cin>>tanggal[totalBarang];
+status[totalBarang] = "Sedang Dipinjam";
 
 status[totalBarang] = "Sedang Dipinjam";
 cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian ini otomatis keisi barangnya belum kembali
@@ -148,7 +149,7 @@ void cariBarang(){
 
 
 void hitungBarang(){
-    int status_belumKembali = 0;
+
 
     if (totalBarang<=0) {
         cout << "Belum ada data peminjam" << endl;
@@ -162,6 +163,7 @@ void hitungBarang(){
     } 
     
 
+  return 0;
 }
 
 
