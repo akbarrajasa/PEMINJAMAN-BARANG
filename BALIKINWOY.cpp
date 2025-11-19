@@ -58,6 +58,7 @@ cout<<"Tanggal pinjam                : "; //input tanggal peminjaman
 cin>>tanggal[totalBarang];
 status[totalBarang] = "Sedang Dipinjam";
 
+status[totalBarang] = "Sedang Dipinjam";
 cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian ini otomatis keisi barangnya belum kembali
 
  totalBarang++; //jumlah barang dalam arraynya bertambah
@@ -66,7 +67,7 @@ cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian
 else { //kondisi kalo user milih inputan selain 1 dan 2
     cout<<"Input tidak valid"<<endl<<endl;
 }
- 
+
 }
 
     }
@@ -150,7 +151,17 @@ void cariBarang(){
 void hitungBarang(){
 
 
+    if (totalBarang<=0) {
+        cout << "Belum ada data peminjam" << endl;
+    } else {
+        for (int i=0;i<totalBarang;i++){
+            if (status[i] == "Sedang Dipinjam"){
+                status_belumKembali++;
+            }
+        } cout << "Total Barang yang Belum Kembali = " << status_belumKembali << endl;
 
+    } 
+    
 
   return 0;
 }
