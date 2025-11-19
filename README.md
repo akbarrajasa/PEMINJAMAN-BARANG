@@ -11,9 +11,9 @@ maka sistem sederhana ini hadir untuk :
 1. Input Data Pinjaman
 2. Tampilkan Data Pinjaman
 3. Tandai barang yang sudah dikembalikan
-4. Melihat barang yang masih dipinjam
-5. Hitung total barang yang masih dipinjam
-6. Cari barang
+4. Cari barang yang dipinjam
+5. Hitung total barang yang dipinjam
+0. Keluar Program
 
 ## 🔥TUKANG NGODING
 1. M. Akbar Rajasa (Cari Barang)
