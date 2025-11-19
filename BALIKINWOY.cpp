@@ -57,7 +57,8 @@ getline(cin,nama[totalBarang]);
 cout<<"Tanggal pinjam                : "; //input tanggal peminjaman 
 cin>>tanggal[totalBarang];
 
-cout<<"Status Peminjaman             : Sedang Dipinjam" <<endl; //bagian ini otomatis keisi barangnya belum kembali
+status[totalBarang] = "Sedang Dipinjam";
+cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian ini otomatis keisi barangnya belum kembali
 
  totalBarang++; //jumlah barang dalam arraynya bertambah
  cout<<endl;
@@ -65,7 +66,7 @@ cout<<"Status Peminjaman             : Sedang Dipinjam" <<endl; //bagian ini oto
 else { //kondisi kalo user milih inputan selain 1 dan 2
     cout<<"Input tidak valid"<<endl<<endl;
 }
- 
+
 }
 
     }
@@ -83,7 +84,7 @@ for(int x=0; x<totalBarang; x++){
 
     cout<<"Nama Barang              = "<<barang[x]<<endl;
     cout<<"Nama Peminjam            = "<<nama[x]<<endl;
-    cout<<"Status Peminjaman        = Sedang Dipinjam"<<status[x]<<endl;
+    cout<<"Status Peminjaman        = "<<status[x]<<endl;
     cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
     cout<<endl;
 }
@@ -92,31 +93,74 @@ for(int x=0; x<totalBarang; x++){
 
 }
 
-void tandaiBarang(){
 
+void tandaiBarang()
 
+{
+    // tampilin daftar barang
+    daftarBarang();
 
+    int tandaiBarang;
+    if (totalBarang >= 1)
+    {
+        cout << "Input nomor barang yg mau ditandai = " << endl;
+        cin >> tandaiBarang;
 
+        int indexBarang = tandaiBarang - 1;
+        if (indexBarang < 0 || indexBarang > totalBarang)
+        {
+            cout << "Nomor barang tidak valid" << endl;
+        }
+        else
+        {
+            status[indexBarang] = "Sudah dikembalikan";
 
+            cout << "Barang berhasil ditandai" << endl;
+        }
+    }
 }
+
+
+
+
 
 
 void cariBarang(){
-
-
-
-
-
-
-
+  
+  string cari;
+  cout << "fitur ini dipakai untuk mencari barang\n";
+  cout << "=======================================" << endl;
+  cout<<"Masukkan nama barang : ";
+  cin.ignore();
+  getline(cin, cari);
+  for(int x=0; x<totalBarang; x++){
+  if (barang[x] == cari){
+    cout << "=======================================" << endl;
+    cout << "Ini dia barang yang kamu cari\n";
+    cout<<"Nama Barang              = "<<barang[x]<<endl;
+    cout<<"Nama Peminjam            = "<<nama[x]<<endl;
+    cout<<"Status Peminjaman        = "<<status[x]<<endl;
+    cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
+    cout<<endl;
+  }
+  }
 }
 
 
-int hitungBarang(){
+void hitungBarang(){
+    int status_belumKembali = 0;
 
+    if (totalBarang<=0) {
+        cout << "Belum ada data peminjam" << endl;
+    } else {
+        for (int i=0;i<totalBarang;i++){
+            if (status[i] == "Sedang Dipinjam"){
+                status_belumKembali++;
+            }
+        } cout << "Total Barang yang Belum Kembali = " << status_belumKembali << endl;
 
-
-
+    } 
+    
 
 }
 
