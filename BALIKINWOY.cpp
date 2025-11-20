@@ -56,18 +56,17 @@ getline(cin,nama[totalBarang]);
 
 cout<<"Tanggal pinjam                : "; //input tanggal peminjaman 
 cin>>tanggal[totalBarang];
-status[totalBarang] = "Sedang Dipinjam";
 
-status[totalBarang] = "Sedang Dipinjam";
-cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //bagian ini otomatis keisi barangnya belum kembali
+status[totalBarang] = "Sedang Dipinjam"; //bagian ini otomatis keisi barangnya belum kembali
+cout<<"Status Peminjaman             : " << status[totalBarang] <<endl; //Sedang dipinjam masuk ke dalam array status
 
  totalBarang++; //jumlah barang dalam arraynya bertambah
- cout<<endl;
+  cout<<endl;
 }
 else { //kondisi kalo user milih inputan selain 1 dan 2
     cout<<"Input tidak valid"<<endl<<endl;
 }
-
+ 
 }
 
     }
@@ -80,13 +79,13 @@ void daftarBarang(){
         cout<<"Barang tidak ada"<<endl<<endl;
 
     } else{ //kalo ada, dia ngelooping buat ditampilin
-for(int x=0; x<totalBarang; x++){
-    cout<<"Data Ke-"<<x+1<<endl;
+for(int x=0; x<totalBarang; x++){ //looping berjalan sampe total barang
+    cout<<"Data Ke-"<<x+1<<endl; //x adalah array, untuk menyesuaikan nomor asli berarti x + 1
 
     cout<<"Nama Barang              = "<<barang[x]<<endl;
     cout<<"Nama Peminjam            = "<<nama[x]<<endl;
-    cout<<"Status Peminjaman        = "<<status[x]<<endl;
-    cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
+    cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl; 
+    cout<<"Status Peminjaman        = "<<status[x]<<endl; 
     cout<<endl;
 }
     }
@@ -102,110 +101,112 @@ void tandaiBarang()
     daftarBarang();
 
     int tandaiBarang;
-    if (totalBarang >= 1)
-    {
-        cout << "Input nomor barang yg mau ditandai = " << endl;
-        cin >> tandaiBarang;
+    if (totalBarang >= 1) { //dicek dulu di dalemnya ada barang apa nggak, kalo ada lanjut input nomor
+    
+        cout << "Input nomor barang yang mau ditandai = ";
+        cin >> tandaiBarang; 
+        cout<<endl;
 
-        int indexBarang = tandaiBarang - 1;
-        if (indexBarang < 0 || indexBarang > totalBarang)
-        {
+        //karena barangnya disimpen dalam array, harus dikonversiin dulu ke array
+        //berarti supaya nomor inputan sesuai sama array, inputan harus -1 untuk dapetin index arraynya
+        int arrayBarang = tandaiBarang - 1; 
+        //dicek lagi kalo ternyata nomornya itu kurang dari 0 atau lebih dari total barang program gak jalan
+        if (arrayBarang < 0 or arrayBarang > totalBarang){
             cout << "Nomor barang tidak valid" << endl;
         }
+        //tapi kalo bener statusnya yang tadi "Sedang dipinjam" berubah jadi "Sudah dikembalikan"
         else
         {
-            status[indexBarang] = "Sudah dikembalikan";
+            status[arrayBarang] = "Sudah dikembalikan";
 
-            cout << "Barang berhasil ditandai" << endl;
+            cout << "Barang nomor "<<tandaiBarang<<" Sudah dikembalikan" << endl<<endl;
         }
-    }
+
 }
-
-
-
-
+}
 
 
 void cariBarang(){
   
-  string cari;
-  cout << "fitur ini dipakai untuk mencari barang\n";
-  cout << "=======================================" << endl;
-  cout<<"Masukkan nama barang : ";
+  string cariBarang;
+
+  cout<<"Masukkan nama barang yang ingin dicari : ";
   cin.ignore();
-  getline(cin, cari);
-  for(int x=0; x<totalBarang; x++){
-  if (barang[x] == cari){
-    cout << "=======================================" << endl;
-    cout << "Ini dia barang yang kamu cari\n";
+  getline(cin, cariBarang);
+
+  for(int x=0; x<totalBarang; x++){ //looping supaya program tau ada barang apa aka
+  if (barang[x] == cariBarang){ //dicek, apakah inputan sama dengan nama barang dalam arraynya
+    //kalo sama, keluar informasi data barangnya
+    cout << "======== Barang ditemukan ======="<<endl;
     cout<<"Nama Barang              = "<<barang[x]<<endl;
     cout<<"Nama Peminjam            = "<<nama[x]<<endl;
     cout<<"Status Peminjaman        = "<<status[x]<<endl;
     cout<<"Tanggal pinjam           = "<<tanggal[x]<<endl;
     cout<<endl;
-  }
+  } 
+  
   }
 }
+
 
 
 void hitungBarang(){
 
-
-    if (totalBarang<=0) {
-        cout << "Belum ada data peminjam" << endl;
-    } else {
-        for (int i=0;i<totalBarang;i++){
-            if (status[i] == "Sedang Dipinjam"){
-                status_belumKembali++;
+    int status_belumKembali = 0; //deklarasi variabel awal
+    if (totalBarang<=0) { //cek kondisi kalo belum ada barang
+        cout << "Belum ada data pinjaman" << endl;
+    } else { //kondisi kalo ada barang
+        for (int i=0;i<totalBarang;i++){ //looping buat ngecek per array nya
+            if (status[i] == "Sedang Dipinjam"){ //cek status apakah valid atau nggak
+                status_belumKembali++; //akan terus bertambah 1
             }
         } cout << "Total Barang yang Belum Kembali = " << status_belumKembali << endl;
 
     } 
-    
-
-  return 0;
 }
-
 
 int main (){
     int pilihan;
     bool running = true;
 
+    //while akan terus berjalan jika kondisinya true
+    //deklarasi awal running itu true
+    //jadi ketika nilai running belum diubah jadi false, maka looping terus jalan
     while(running) {
-        tampilkanMenu();
+        tampilkanMenu(); //manggil fungsi tampilkan menu
         cout<<"Masukkan Pilihan Menu : ";
         cin>>pilihan;
         cout<<endl<<endl;
 
-        switch (pilihan){
+        switch (pilihan){ //switch case dipake karena gak ada kondisi lagi dalam percabangannya
 
             case 1:
-            inputBarang();
+            inputBarang(); //kalo kita input menu 1, manggil fungsi input barang
             break;
 
             case 2:
-            daftarBarang();
+            daftarBarang(); //kalo kita input menu 2, manggil fungsi daftar barang
             break;
 
             case 3:
-            tandaiBarang();
+            tandaiBarang(); //kalo kita input menu 3, manggil fungsi tandai barang
             break;
 
             case 4:
-            cariBarang();
+            cariBarang(); //kalo kita input menu 4, manggil fungsi cari barang
             break;
 
             case 5:
-            hitungBarang();
+            hitungBarang(); //kalo kita input menu 5, manggil fungsi hitung barang
             break;
 
             case 0 :
             cout<<"Thanksss"<<endl;
-            running = false;
+            running = false; //nah kalo kita input menu 0, running nya berubah jadi false, loopingnya berenti
             break;
 
             default :
-            cout<<"tidak valid"<<endl;
+            cout<<"tidak valid"<<endl; // kalo inputan selain dari menu yang tersedia maka program error
         }
     }
     return 0;
